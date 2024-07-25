@@ -22,7 +22,7 @@ app.get("/test", async (req, res) => {
   });
 });
 
-app.use("/", staticRouter);
+// app.use("/", staticRouter);
 
 app.use("/url", urlRoute);
 
