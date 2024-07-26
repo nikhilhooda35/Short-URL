@@ -4,7 +4,7 @@ const urlRoute = require("./routes/url");
 const { connectDB } = require("./connection");
 const URL = require("./models/url");
 const { handleGetAnalytics } = require("./controllers/url");
-const staticRouter = "./routes/staticRouter";
+const staticRouter = require("./routes/staticRouter");
 const app = express();
 const PORT = 8001;
 
@@ -22,7 +22,7 @@ app.get("/test", async (req, res) => {
   });
 });
 
-// app.use("/", staticRouter);
+app.use("/", staticRouter);
 
 app.use("/url", urlRoute);
 
