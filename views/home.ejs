@@ -2,6 +2,11 @@
 <html lang="en">
 
 <head>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
@@ -22,15 +27,17 @@
             </div>
             <% if (locals.urls){ %>
                 <table>
-                    <tr>
-                        <thead>
+                    <thead>
+                        <tr>
                             <th>S. No.</th>
                             <th>ShortID</th>
                             <th>Redirect URL</th>
-                            <th>CLicks</th>
-                        </thead>
-                        <tbody>
-                            <% urls.forEach((url, index)=> { %>
+                            <th>Clicks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% urls.forEach((url, index)=> { %>
+                            <tr>
                                 <td>
                                     <%= index + 1 %>
                                 </td>
@@ -43,11 +50,12 @@
                                 <td>
                                     <%= url.visitHistory.length %>
                                 </td>
-                                <% }) %>
-                        </tbody>
-                    </tr>
+                            </tr>
+                            <% }) %>
+                    </tbody>
                 </table>
                 <% } %>
+
 </body>
 
 </html>
